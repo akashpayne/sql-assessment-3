@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.params=item
-comment0.target=Drop(Item)
-comment1.params=ui\ game
-comment1.target=java.lang.String\ process(GameMain,\ Game)
-numComments=2

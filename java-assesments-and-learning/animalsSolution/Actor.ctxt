@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=newActors
-comment0.target=void\ act(java.util.List)
-comment0.text=\n\ Do\ a\ life\ step\ and\ possible\ produce\ new\ offspring.\n
-comment1.params=
-comment1.target=boolean\ isActive()
-comment1.text=\n\ Check\ whether\ still\ alive.\n
-numComments=2

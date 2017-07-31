@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=ProtocolException()
-comment0.text=\r\n\ Constructs\ a\ new\ exception\ with\ a\ null\ detail\ string\r\n
-comment1.params=message
-comment1.target=ProtocolException(java.lang.String)
-comment1.text=\r\n\ Constructs\ a\ new\ exception\ with\ the\ specified\ detail\ string\r\n\ @param\ message\ the\ detail\ string\r\n
-numComments=2

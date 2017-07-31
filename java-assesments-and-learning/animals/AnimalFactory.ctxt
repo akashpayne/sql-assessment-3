@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.params=view
-comment0.target=AnimalFactory(SimulatorView)
-comment0.text=\nConstructor\ for\ objects\ of\ class\ AnimalFactory\n@param\ view\ The\ visualisation\ of\ the\ simulation.\n\n
-comment1.target=Animal\ optionallyCreateAnimal()
-comment1.text=\nOptionally\ create\ an\ animal.\nWhether\ an\ animal\ is\ created\ will\ depend\ upon\ probabilities\nof\ animal\ creation.\n@return\ A\ newly\ created\ Animal,\ or\ null\ if\ none\ is\ created.\n\n
-comment2.target=void\ setupColors()
-comment2.text=\nAssociate\ colors\ with\ the\ animal\ classes.\n\n
-numComments=3

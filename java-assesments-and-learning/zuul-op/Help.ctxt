@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=ui\ game
-comment0.target=java.lang.String\ process(GameMain,\ Game)
-comment0.text=\r\n\ Return\ help\ information.\r\n\ Pre-condition\:\ both\ ui\ and\ game\ are\ not\ null;\r\n
-numComments=1

@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=BitInitialiseException()
-comment0.text=\ \r\n\ This\ method\ is\ the\ exception\ handler\ that\ catches\ the\ exception.\r\n
-comment1.params=message
-comment1.target=BitInitialiseException(java.lang.String)
-comment1.text=\ \r\n\ This\ method\ is\ the\ exception\ handler\ that\ catches\ the\ exception.\r\n
-numComments=2

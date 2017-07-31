@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.util.ArrayList\ getBody()
+comment0.text=\r\n\ Returns\ an\ ArrayList\ of\ SnakeBody\ to\ the\ current\ Snake\ object\r\n\ @return\ An\ ArrayList\ of\ SnakeBody\ to\ the\ current\ Snake\ object\r\n\ @see\ SnakeBodyInterface\ \r\n
+comment1.params=
+comment1.target=int\ getWidth()
+comment1.text=\r\n\ Return\ the\ width\ of\ the\ current\ Snake\ item\r\n\ @return\ The\ width\ of\ the\ current\ Snake\ item\r\n
+comment2.params=
+comment2.target=int\ getHeight()
+comment2.text=\r\n\ Return\ the\ height\ of\ the\ current\ Snake\ item\r\n\ @return\ The\ height\ of\ the\ current\ Snake\ item\r\n
+numComments=3

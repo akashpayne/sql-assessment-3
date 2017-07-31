@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ getTimeToLive()
+comment0.text=\r\n\ Returns\ the\ time\ that\ the\ special\ food\ will\ be\ kept\ displayed\ on\ the\ screen\r\n\ @return\ The\ time\ that\ the\ special\ food\ will\ be\ kept\ displayed\ on\ the\ screen\r\n
+comment1.params=
+comment1.target=void\ decreaseTime()
+comment1.text=\r\n\ Decreases\ the\ time\ that\ the\ food\ is\ being\ displayed\ on\ the\ screen\r\n
+numComments=2

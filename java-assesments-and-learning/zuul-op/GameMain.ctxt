@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameMain()
+comment0.text=\r\n\ Initialise.\r\n
+comment1.params=
+comment1.target=void\ play()
+comment1.text=\r\n\ \ Main\ play\ routine.\ \ Loops\ until\ end\ of\ play.\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ Main\ method;\ used\ if\ the\ game\ is\ standalone,\ outside\ BlueJ.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getHelp()
+comment3.text=\r\n\ Tell\ player\ how\ to\ obtain\ help.\r\n
+comment4.params=
+comment4.target=java.lang.String\ getCommands()
+comment4.text=\r\n\ Tell\ player\ available\ commands.\r\n
+numComments=5

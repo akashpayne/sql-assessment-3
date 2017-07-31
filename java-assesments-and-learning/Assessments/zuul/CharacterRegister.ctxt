@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CharacterRegister()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ CharacterRegister\n
+comment1.params=c
+comment1.target=void\ register(Character)
+comment1.text=\n\ Register\ a\ character.\n\ Assumes\ that\ no\ character\ with\ the\ same\ description\ already\ exists.\n\ @param\ c\ \ The\ character\ to\ register.\n
+comment2.params=description
+comment2.target=Character\ fromString(java.lang.String)
+comment2.text=\n\ Lookup\ a\ character\ by\ its\ description\ in\ the\ register.\n\ Returns\ null\ if\ no\ such\ entry\ in\ the\ register.\n\ @param\ description\ \ \ The\ description\ to\ be\ looked\ up.\n\ @return\ \ the\ corresponding\ character\ in\ the\ register\n
+comment3.params=
+comment3.target=void\ maybeMove()
+comment3.text=\n\ Possibly\ move\ all\ characters\ to\ some\ neighbouring\ rooms.\n
+comment4.params=c
+comment4.target=void\ remove(Character)
+comment4.text=\n\ Remove\ given\ character\ from\ the\ register\ and\ also\ from\ its\ room.\n\ Assumes\ the\ character\ is\ in\ the\ register\ and\ in\ a\ room.\n
+numComments=5

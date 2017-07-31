@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ getCurrentScore()
+comment0.text=\r\n\ Returns\ the\ score\ of\ the\ current\ game\r\n\ @return\ The\ score\ of\ the\ current\ game\r\n
+comment1.params=
+comment1.target=int\ getHighScore()
+comment1.text=\r\n\ Returns\ the\ highest\ score\ recorded\r\n\ @return\ The\ highest\ score\ recorded\r\n
+comment2.params=specialFood
+comment2.target=void\ incrementsCurrentScore(boolean)
+comment2.text=\r\n\ Increments\ the\ score\ of\ the\ current\ game.\r\n\ Depends\ of\ the\ parameter.\r\n\ @param\ specialFood\ A\ boolean\ which\ tells\ if\ the\ Food\ \r\n\ \ \ \ \ \ \ \ eaten\ by\ the\ snake\ is\ a\ SpecialFoodor\ not.\r\n\ @see\ Snake\r\n\ @see\ Food\r\n\ @see\ SpecialFood\r\n
+comment3.params=s
+comment3.target=void\ updateHighScore(int)
+comment3.text=\r\n\ Updates\ the\ highest\ score\ recorded,\ if\ it\ needs\ to\ be\ done\r\n\ @param\ int\ s\ \=\ The\ score\ done\ by\ the\ player\ at\ the\ last\ game.\ \r\n\ \ \ \ \ \ \ \ It\ will\ be\ compared\ to\ the\ current\ highest\ score\ \r\n\ \ \ \ \ \ \ \ recorded\ and\ replace\ if\ it's\ greater.\r\n
+numComments=4

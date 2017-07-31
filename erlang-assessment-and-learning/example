@@ -1,0 +1,179 @@
+%% a3simpler.erl -- dining philosophers (Fred's version, simplified a bit)
+%% Note: this version implements the various state-machines more obviously.
+
+
+-module (a3simpler).
+-author ("Fred Barnes").
+-compile ([export_all]).
+
+-define (THINK_TIME, 1000).
+-define (EAT_TIME, 1000).
+
+
+%{{{  reporting/0 -- reporting process
+% The reporting process.  Just waits for status messages and displays these.
+%
+reporting () ->
+	receive {Name, Status, Pid} ->
+		io:format ("~s: ~s~n", [Name, Status]),
+		Pid ! {self(), ack}
+	end,
+	reporting ().
+
+
+%}}}
+%{{{  fork/2 (Name, Report) -- fork process
+% the fork process.  `Name' should be a string (e.g. "Fork 2"),
+% `Report' is the PID of the process to which status reports are sent.
+%
+fork (Name, Report) ->
+	fork (on_table, Name, Report).
+
+
+% this handles the "on table" state.
+fork (on_table, Name, Report) ->
+	% initially, report to say we're on the table.
+	Report ! {Name, "on table", self()},
+	receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+	% wait to be picked up.
+	receive
+		{pickup, Pid} ->
+			% report pickup
+			Report ! {Name, "in use", self()},
+			receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+			% acknowledge pickup to philosopher _after_ we've reported.
+			Pid ! {picked_up, self()},
+
+			% now we're in-use by a particular philosopher.
+			fork (in_use, Name, Report, Pid)
+	end.
+
+
+% this handles the "held / in-use" state.  The extra 'Who' is a philosopher PID, so we only
+% accept putdown messages from that particular philosopher.  Not expecting any other philosopher
+% to send this, but better safe than sorry!
+%
+fork (in_use, Name, Report, Who) ->
+	receive
+		{putdown, Who} ->
+			% and now we're back on the table.
+			fork (on_table, Name, Report)
+	end.
+
+%}}}
+%{{{  philosopher/4 (Name, Report, Left, Right) -- philosopher process
+% the philosopher process.  `Name' should be a name (e.g. "Plato"), `Report'
+% is the PID of the process to which status reports are sent, `Left' and `Right'
+% are the PIDs of the left and right forks respectively.
+%
+philosopher (Name, Report, Left, Right) ->
+	random:seed (now ()),							% seed random generator
+	lists:map (fun (_) -> random:uniform (1000) end, lists:seq (1,100)),	% call random 100 times (diverge sequence a bit).
+
+	philosopher (thinking, Name, Report, Left, Right).
+
+
+% philosopher thinking state
+philosopher (thinking, Name, Report, Left, Right) ->
+	% thinking state and random delay
+	Report ! {Name, "thinking", self()},
+	receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+	timer:sleep (random:uniform (?THINK_TIME)),
+
+	% then we get hungry.
+	philosopher (hungry, Name, Report, Left, Right);
+
+% philosopher hungry state
+philosopher (hungry, Name, Report, Left, Right) ->
+	% hungry: report state and pick up forks.
+	Report ! {Name, "hungry", self()},
+	receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+	% send both messages to pickup forks.
+	Left ! {pickup, self()},
+	Right ! {pickup, self()},
+
+	receive
+		{picked_up, Left} ->
+			% got the left fork
+			philosopher (got_left, Name, Report, Left, Right);
+		{picked_up, Right} ->
+			% got the right fork
+			philosopher (got_right, Name, Report, Left, Right)
+	end;
+
+% philosopher got-left-fork
+philosopher (got_left, Name, Report, Left, Right) ->
+	% got left fork: report and wait for right fork picked-up message.
+	Report ! {Name, "got left fork", self()},
+	receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+	receive
+		{picked_up, Right} ->
+			% now got both forks, report the fact we got the right one here
+			Report ! {Name, "got right fork", self()},
+			receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+			philosopher (eating, Name, Report, Left, Right)
+	end;
+
+% philosopher got-right-fork
+philosopher (got_right, Name, Report, Left, Right) ->
+	% got right fork: report and wait for left fork picked-up message.
+	Report ! {Name, "got right fork", self()},
+	receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+	receive
+		{picked_up, Left} ->
+			% now got both forks, report the fact we got the left one here
+			Report ! {Name, "got left fork", self()},
+			receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+			philosopher (eating, Name, Report, Left, Right)
+	end;
+
+% philosopher eating
+philosopher (eating, Name, Report, Left, Right) ->
+	% eating: report state and random delay
+	Report ! {Name, "eating, om nom nom", self()},
+	receive {Report, ack} -> true end,		% wait for report acknowledgement
+
+	timer:sleep (random:uniform (?EAT_TIME)),
+
+	% put down forks: not acknowledged so can just send and get back to thinking
+	Left ! {putdown, self()},
+	Right ! {putdown, self()},
+
+	philosopher (thinking, Name, Report, Left, Right).
+
+%}}}
+
+%{{{  college/0 -- college (top-level) process
+% the college process.  This sets up the five forks, five philosophers and the reporting process.
+%
+college () ->
+	% create reporting process
+	R = spawn_link (?MODULE, reporting, []),
+
+	% create the 5 forks
+	F0 = spawn_link (?MODULE, fork, ["Fork 0", R]),
+	F1 = spawn_link (?MODULE, fork, ["Fork 1", R]),
+	F2 = spawn_link (?MODULE, fork, ["Fork 2", R]),
+	F3 = spawn_link (?MODULE, fork, ["Fork 3", R]),
+	F4 = spawn_link (?MODULE, fork, ["Fork 4", R]),
+
+	% create the 5 philosophers (plugged into the correct forks)
+	spawn_link (?MODULE, philosopher, ["Plato", R, F0, F1]),
+	spawn_link (?MODULE, philosopher, ["Socrates", R, F1, F2]),
+	spawn_link (?MODULE, philosopher, ["Confucius", R, F2, F3]),
+	spawn_link (?MODULE, philosopher, ["Cicero", R, F3, F4]),
+	spawn_link (?MODULE, philosopher, ["Plotinus", R, F4, F0]),
+
+	% wait for something impossible (avoid termination).
+	receive impossible -> true end.
+
+
+%}}}

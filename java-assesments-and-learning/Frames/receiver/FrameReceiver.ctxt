@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=mtu\ quiet\ stop
+comment0.target=FrameReceiver(int,\ boolean,\ java.lang.String)
+comment0.text=\r\n\ FrameReceiver\ constructor.\r\n\ Create\ and\ initialize\ new\ FrameReceiver.\r\n\ @param\ mtu\ the\ maximum\ transfer\ unit\ (frame\ length)\ to\ support\r\n\ @param\ quiet\ true\ for\ quiet\ mode\ which\ suppresses\ prompts\ and\ status\ info\r\n\ @param\ stop\ string\ that\ will\ signal\ the\ end\ of\ the\ input\ stream\ (null\ \=\ none)\r\n
+comment1.params=
+comment1.target=int\ getMTU()
+comment1.text=\r\n\ Get\ the\ MTU\r\n\ @return\ the\ maximum\ transfer\ unit\ supported\r\n
+comment2.params=
+comment2.target=java.lang.String\ receiveFrame()
+comment2.text=\r\n\ Receive\ a\ single\ frame.\r\n\ <P>\r\n\ @return\ a\ string\ containing\ the\ frame\ received,\ or\ null\ if\ the\r\n\ end\ of\ the\ input\ stream\ has\ been\ reached.\r\n\ <P>\r\n\ The\ end\ of\ the\ input\ stream\ is\ detected\ when\ the\ user\ types\ "."\r\n\ (see\ field\ <i>stop</i>)\ or\ the\ physical\ end\ of\ the\ file\ is\ reached\r\n\ if\ input\ redirection\ is\ being\ used.\ \ In\ either\ case\ this\ method\r\n\ will\ exit\ immediately\ and\ return\ null.\ \ The\ "."\ is\ NOT\ returned.\r\n\ <P>\r\n\ Note\ that\ in\ real\ systems\ noise\ may\ be\ present\ between\ frames.\r\n\ The\ returned\ string\ could\ therefore\ include\ a\ few\ random\ characters\r\n\ before\ and\ after\ the\ frame\ itself.\ \ This\ would\ not\ generally\ be\r\n\ treated\ as\ an\ error.\r\n\ <P>\r\n\ @throws\ ProtocolException\ in\ the\ event\ of\ an\ error\r\n
+numComments=3

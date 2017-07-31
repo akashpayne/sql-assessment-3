@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=view
+comment0.target=OrganismFactory(SimulatorView)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ OrganismFactory\r\n\ @param\ view\ The\ visualisation\ of\ the\ simulation.\r\n
+comment1.params=field\ newActors
+comment1.target=Actor\ optionallyCreateActors(Field,\ java.util.List)
+comment1.text=\r\n\ Optionally\ create\ an\ organism.\r\n\ Whether\ an\ organism\ is\ created\ will\ depend\ upon\ probabilities\r\n\ of\ organism\ creation.\r\n\ @return\ A\ newly\ created\ Organism,\ or\ null\ if\ none\ is\ created.\r\n
+comment2.params=
+comment2.target=void\ setupColors()
+comment2.text=\r\n\ Associate\ colors\ with\ the\ organism\ classes.\r\n
+numComments=3

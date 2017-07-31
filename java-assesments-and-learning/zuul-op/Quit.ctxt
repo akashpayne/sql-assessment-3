@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=ui\ game
+comment0.target=java.lang.String\ process(GameMain,\ Game)
+comment0.text=\r\n\ Just\ tells\ the\ game\ to\ quit.\r\n\ Pre-condition\:\ game\ must\ not\ be\ null.\r\n
+numComments=1

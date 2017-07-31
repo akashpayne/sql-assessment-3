@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ getPosX()
+comment0.text=\r\n\ Returns\ the\ current\ position\ on\ X\r\n\ @return\ Current\ position\ on\ X\r\n
+comment1.params=
+comment1.target=int\ getPosY()
+comment1.text=\r\n\ Returns\ the\ current\ position\ on\ Y\r\n\ @return\ Current\ position\ on\ Y\r\n
+comment2.params=
+comment2.target=int\ getWidth()
+comment2.text=\r\n\ Returns\ the\ current\ width\r\n\ @return\ Current\ width\r\n
+comment3.params=
+comment3.target=int\ getHeight()
+comment3.text=\r\n\ Returns\ the\ current\ height\r\n\ @return\ Current\ height\r\n
+comment4.params=snake
+comment4.target=boolean\ isEaten(Snake)
+comment4.text=\r\n\ boolean\ isEaten\ checks\ if\ the\ snake\ is\ eating\ the\ current\ object\ or\ not.\r\n\ @return\ A\ boolean\ checks\ if\ the\ snake\ is\ eating\ the\ current\ object\ or\ not.\r\n\ @param\ snake\ The\ Snake\ object.\r\n
+numComments=5

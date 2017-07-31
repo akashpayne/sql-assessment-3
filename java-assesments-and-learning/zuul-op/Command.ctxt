@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=ui\ game
+comment0.target=java.lang.String\ process(GameMain,\ Game)
+comment0.text=\r\n\ Process,\ that\ is,\ execute\ the\ command\ in\ the\ game.\r\n\ @param\ game\ The\ actual\ game.\r\n\ @return\ Message\ to\ the\ player.\r\n
+numComments=1

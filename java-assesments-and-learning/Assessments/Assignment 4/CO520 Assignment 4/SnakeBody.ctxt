@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=x\ y\ d
+comment0.target=SnakeBody(int,\ int,\ Direction)
+comment0.text=\r\n\ Initialises\ the\ snake's\ body's\ position\ and\ direction.\r\n
+comment1.params=
+comment1.target=int\ getPosX()
+comment1.text=\r\n\ gets\ the\ x\ position\r\n
+comment2.params=
+comment2.target=int\ getPosY()
+comment2.text=\r\n\ gets\ the\ y\ position\r\n
+comment3.params=
+comment3.target=Direction\ getDirection()
+comment3.text=\r\n\ gets\ the\ direction\ \r\n
+comment4.params=x
+comment4.target=void\ setPosX(int)
+comment4.text=\r\n\ sets\ the\ x\ position\r\n
+comment5.params=y
+comment5.target=void\ setPosY(int)
+comment5.text=\r\n\ sets\ the\ Y\ position\r\n
+comment6.params=d
+comment6.target=void\ setDirection(Direction)
+comment6.text=\r\n\ sets\ the\ direction\ \r\n
+comment7.params=other
+comment7.target=boolean\ equals(SnakeBody)
+comment7.text=\r\n\ the\ equals\ method\ tests\ whether\ the\ Snake's\ body\ x\ and\ y\ positions\ are\ equal\ to\ \r\n\ another\ snake\ body\ part.\r\n
+numComments=8

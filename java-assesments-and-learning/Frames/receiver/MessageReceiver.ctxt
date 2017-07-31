@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=physicalLayer\ quiet
+comment0.target=MessageReceiver(FrameReceiver,\ boolean)
+comment0.text=\r\n\ MessageReceiver\ constructor\ (DO\ NOT\ ALTER\ ANY\ PART\ OF\ THIS)\r\n\ Create\ and\ initialize\ new\ MessageReceiver.\r\n\ @param\ physicalLayer\ physical\ layer\ object\ with\ frame\ receiver\ service\r\n\ (this\ will\ already\ have\ been\ created\ and\ initialized\ by\ TestReceiver)\r\n\ @param\ quiet\ true\ for\ quiet\ mode\ which\ suppresses\ prompts\ and\ status\ info\r\n
+comment1.params=
+comment1.target=java.lang.String\ receiveMessage()
+comment1.text=\r\n\ Receive\ a\ message\ (THIS\ IS\ THE\ ONLY\ METHOD\ YOU\ NEED\ TO\ MODIFY)\r\n\ @return\ the\ message\ received,\ or\ null\ if\ the\ end\ of\ the\ input\r\n\ stream\ has\ been\ reached.\ \ (See\ receiveFrame\ documentation\ for\r\n\ further\ explanation\ of\ how\ the\ end\ of\ the\ input\ stream\ is\r\n\ detected\ and\ handled.)\r\n\ @throws\ ProtocolException\ immediately\ without\ attempting\ to\r\n\ receive\ any\ further\ frames\ if\ any\ error\ is\ detected,\ such\ as\r\n\ a\ corrupt\ frame\ being\ received\r\n
+comment2.params=frame
+comment2.target=java.lang.String\ validateFrame(java.lang.String)
+comment2.text=\r\n\ Checks\ a\ frame\ to\ ensure\ that\ it\ is\ within\ valid\ structure,\ message\ size\ and\ that\ the\ checksum\ is\ correct.\r\n\ @param\ frame\ to\ be\ validated\r\n\ @return\ the\ errorMessages\ that\ frame\ has\r\n
+comment3.params=frame
+comment3.target=java.lang.String\ splitMessage(java.lang.String)
+comment3.text=\r\n\ Takes\ a\ valid\ frame\ and\ returns\ the\ message\ that\ is\ split\ from\ it.\ \r\n\ @param\ frame\ to\ extract\ a\ message\ from\r\n\ @return\ frame\ message\r\n
+comment4.params=frame
+comment4.target=java.lang.String\ generateCheckSum(java.lang.String)
+comment4.text=\r\n\ Takes\ a\ frame\ and\ calculates\ the\ check\ sum\ value\ by\ the\ arithmetic\ \r\n\ sum\ of\ the\ characters\ inside\ the\ frame,\ (same\ as\ sender\ class).\r\n\ @param\ frame\ the\ frame\ which\ is\ having\ it's\ check\ sum\ calculated\r\n\ @return\ the\ checkSum\ value\ of\ the\ frame\r\n
+numComments=5

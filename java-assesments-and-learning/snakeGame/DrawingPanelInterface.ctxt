@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ getBackWidth()
+comment0.text=\r\n\ Returns\ the\ current\ size\ (width)\ of\ the\ panel\r\n\ @return\ Current\ width\ of\ the\ panel\r\n
+comment1.params=
+comment1.target=int\ getBackHeight()
+comment1.text=\r\n\ Returns\ the\ current\ size\ (height)\ of\ the\ panel\r\n\ @return\ Current\ height\ of\ the\ panel\r\n
+comment2.params=
+comment2.target=javax.swing.Timer\ getTimer()
+comment2.text=\r\n\ Returns\ the\ Timer\ object\ in\ it\ current\ state.\ \r\n\ This\ object\ will\ be\ used\ to\ run\ or\ pause/stop\ the\ program's\ execution.\r\n\ @return\ Timer\ Object\r\n
+comment3.params=
+comment3.target=Snake\ getSnake()
+comment3.text=\r\n\ Returns\ the\ Snake\ object\ in\ it\ current\ state.\ \r\n\ This\ object\ contains\ all\ of\ the\ snake's\ characteristics.\r\n\ @return\ Snake\ Object\t\r\n
+comment4.params=snake
+comment4.target=void\ updatePosition(Snake)
+comment4.text=\r\n\ This\ methods\ is\ used\ to\ update\ the\ Snake's\ position\ each\ time\ the\ timer\ wake\ up\ the\ current\ process.\r\n\ It\ only\ updates\ the\ snake's\ position,\ and\ not\ it\ directions.\r\n\ This\ is\ updated\ by\ a\ method\ from\ the\ Snake\ class\ called\ updateDirections()\r\n\ @param\ snake\ that\ this\ method\ updates\ it\ position\r\n\ @exception\ BorderException\ If\ the\ snake's\ new\ position\ is\ in\ contact\ with\ a\ wall\ -\ gives\ error\ (excepted)\r\n\ @see\ SnakeInterface\r\n
+comment5.params=
+comment5.target=void\ move()
+comment5.text=\r\n\ This\ method\ checks\ if\ the\ snake\ is\ eating\ a\ food\ at\ the\ moment\ it's\ called.\r\n\ This\ method\ is\ the\ one\ called\ by\ the\ main\ process,\ and\ \r\n\ calls\ the\ method\ updatePosition(Snake).\ \r\n\ It\ also\ repaints\ the\ graphics\ each\ time\ it's\ called.\r\n\ @exception\ BitInitialiseException\ If\ the\ snake\ is\ eating\ it\ own\ tail\ -\ gives\ error\ (excepted)\r\n
+numComments=6

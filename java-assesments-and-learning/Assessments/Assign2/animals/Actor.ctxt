@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=newActors
+comment0.target=void\ act(java.util.List)
+comment0.text=\r\n\ the\ hook\ for\ act\ functionality\ in\ actor's\ classes\:\ Rabbit,\ Fox,\ etc.\r\n
+comment1.params=
+comment1.target=boolean\ isActive()
+comment1.text=\r\n\ Is\ the\ actor\ still\ active?\r\n\ @return\ true\ if\ still\ \r\n\ active,\ false\ if\ not.\ \r\n
+numComments=2

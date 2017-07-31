@@ -1,0 +1,125 @@
+--http://www.cs.kent.ac.uk/people/staff/nsr/teaching/CO323/LOCAL-ONLY/qry/query.php
+--
+--
+-- CO323 2013/14 Assessment 3: Databases
+-- 30th March 2014 
+-- Akash Payne AP567
+--
+
+--
+-- 1. Use a select statement to retrieve all content of the person table.
+--
+SELECT * FROM person;
+
+--
+-- 2. Use a select statement to retrieve all content of the patient table.
+--
+SELECT * FROM patient;
+
+--
+-- 3. Use a select statement to retrieve all content of the doctor table.
+--
+SELECT * FROM doctor;
+
+--
+--4. Use a select statement to retrieve the initials and last_name of each row in the
+--   person table.
+--
+SELECT initials,last_name FROM person;
+
+--
+--5. Use a select statement to retrieve all columns in the person table for the person
+--   whose last name is 'Dryden'.
+--
+
+SELECT * FROM person 
+WHERE last_name='Dryden';
+
+--
+--6. Use a select statement to retrieve the person id, name and the date registered
+--   for the patient with the id '102'.
+--
+SELECT patient_id, date_registered, last_name
+FROM person
+JOIN patient
+WHERE patient_id='102';
+
+--
+-- Execute the command
+-- select initials,last_name, sex, current_date -
+-- date_of_birth as age from person;
+-- What do the values in the final column represent?
+--
+-- Answer: 
+--        The final Column represents the age, 
+--        which is set as: (Current Date - Date of birth)...
+--
+-- initials last_name sex age 
+-- T Williams m 420214 
+
+
+--
+--8. Produce a list of doctor IDs together with the number of appointments made
+--   for each doctor with one or more appointments.
+--
+SELECT doctor.doctor_id, 
+    COUNT(appointment.appt_time) AS NumberOfAppointments 
+FROM doctor 
+LEFT JOIN appointment 
+ON appointment.doctor_id = doctor.doctor_id
+GROUP BY doctor.doctor_id
+HAVING COUNT(appointment.appt_time) >= 1;
+
+--
+--9. Modify the previous query to include any doctors with no appointments.
+--
+SELECT doctor.doctor_id, 
+    COUNT(appointment.appt_time) AS NumberOfAppointments 
+FROM doctor 
+LEFT JOIN appointment 
+ON appointment.doctor_id = doctor.doctor_id
+GROUP BY doctor.doctor_id;
+
+--
+--10. Modify the previous query to show the doctor's name as well as their ID.
+--
+SELECT     
+	doctor.doctor_id, 
+	person.last_name, 
+	COUNT(appointment.appt_time) AS NumberOfAppointments 
+FROM doctor
+LEFT JOIN appointment 
+    ON appointment.doctor_id = doctor.doctor_id
+INNER JOIN person
+    ON person.person_id = doctor.doctor_id
+GROUP BY doctor.doctor_id;
+
+--
+--11. Produce a list of appointments for each doctor including the doctor's name,
+--    the patient's name and the date time and duration of the appointment. The
+--    result should be ordered by doctor's name and date/time of appointment.
+--
+SELECT 
+	doc.last_name AS DoctorName, 
+	person.last_name AS PatientName, 
+	appointment.appt_date, 
+	appointment.appt_time, 
+	appointment.appt_duration 
+FROM appointment  
+INNER JOIN doctor 
+	ON  doctor.doctor_id = appointment.doctor_id 
+LEFT JOIN person 
+	ON  person.person_id = appointment.patient_id
+LEFT JOIN ( SELECT * FROM person ) doc
+	ON  doc.person_id = appointment.doctor_id 
+ORDER BY
+	doc.last_name,
+	appointment.appt_date, 
+	appointment.appt_time;
+	
+--
+-- END OF ASSIGNMENT
+-- 
+-- CO323 2013/14 Assessment 3: Databases
+-- Akash Payne AP567
+--

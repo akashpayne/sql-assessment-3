@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=mtu\ revealControlCodes\ quiet
+comment0.target=void\ runTest(int,\ boolean,\ boolean)
+comment0.text=\r\n\ Run\ test\ (version\ with\ all\ options)\r\n\ @param\ mtu\ the\ physical\ layer's\ maximum\ transfer\ unit\ (frame\ length)\r\n\ @param\ revealControlCodes\ true\ if\ control\ codes\ are\ to\ be\ made\ visible\r\n\ @param\ quiet\ true\ for\ quiet\ mode\ which\ suppresses\ prompts\ and\ status\ info\r\n
+comment1.params=mtu
+comment1.target=void\ runTest(int)
+comment1.text=\r\n\ Run\ test\ (version\ using\ sensible\ defaults\ for\ most\ options)\r\n\ @param\ mtu\ the\ physical\ layer's\ maximum\ transfer\ unit\ (frame\ length)\r\n
+comment2.params=
+comment2.target=void\ runTest()
+comment2.text=\r\n\ Run\ test\ (version\ using\ sensible\ defaults\ for\ all\ options)\r\n
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ Main\ method\ used\ when\ the\ program\ is\ executed\ from\ a\ command\ line.\r\n\ DON'T\ USE\ THIS\ METHOD\ UNDER\ BLUEJ.\r\n\ @param\ args\ the\ command\ line\ arguments\r\n\ @throws\ IOException\ if\ unexpected\ i/o\ error\ occurs\r\n
+comment4.params=errorMessage
+comment4.target=void\ usageErrorExit(java.lang.String)
+comment4.text=\r\n\ Handle\ program\ usage\ errors.\r\n\ Forces\ exit.\r\n\ @param\ errorMessage\ message\ describing\ error\r\n
+numComments=5

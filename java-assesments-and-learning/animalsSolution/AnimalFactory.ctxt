@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=AnimalFactory()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ AnimalFactory\n\ @param\ view\ The\ visualisation\ of\ the\ simulation.\n
+comment1.params=field\ row\ col
+comment1.target=Actor\ optionallyCreateAnimal(Field,\ int,\ int)
+comment1.text=\n\ Optionally\ create\ an\ animal.\n\ Whether\ an\ animal\ is\ created\ will\ depend\ upon\ probabilities\n\ of\ animal\ creation.\n\ @return\ A\ newly\ created\ Animal,\ or\ null\ if\ none\ is\ created.\n
+comment2.params=view
+comment2.target=void\ setupColours(SimulatorView)
+comment2.text=\n\ Associate\ colours\ with\ the\ animal\ classes.\n
+numComments=3

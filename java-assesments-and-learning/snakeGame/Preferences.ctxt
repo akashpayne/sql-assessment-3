@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Preferences()
+comment0.text=\r\n\ The\ Constructor\ initialises\ the\ new\ JFrame\ and\ allows\ the\ user\ to\ choose\ their\ options\r\n\ the\ frame\ uses\ different\ types\ of\ buttons\ to\ give\ the\ user\ more\ flexibility\ and\ an\ easier\r\n\ interface.\ \r\n
+comment1.params=
+comment1.target=int\ getDifficulty()
+comment1.text=\r\n\ This\ method\ gets\ the\ difficulty\ set\r\n
+comment2.params=e
+comment2.target=void\ mouseClicked(java.awt.event.MouseEvent)
+comment2.text=\r\n\ This\ method\ checks\ what\ the\ user\ has\ clicked\ on\ and\ sets\ the\ difficulty\ to\ that\ \r\n\ value.\r\n
+comment3.params=e
+comment3.target=void\ mouseEntered(java.awt.event.MouseEvent)
+comment4.params=e
+comment4.target=void\ mouseExited(java.awt.event.MouseEvent)
+comment5.params=e
+comment5.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment6.params=e
+comment6.target=void\ mouseReleased(java.awt.event.MouseEvent)
+numComments=7

@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Snake()
+comment0.text=\r\n\ The\ constructor\ initialises\ the\ snake\ with\ default\ values\ \r\n
+comment1.params=
+comment1.target=java.util.ArrayList\ getBody()
+comment1.text=\r\n\ gets\ the\ array\ for\ the\ snake's\ body\r\n
+comment2.params=
+comment2.target=int\ getWidth()
+comment2.text=\r\n\ gets\ the\ width\ \r\n
+comment3.params=
+comment3.target=int\ getHeight()
+comment3.text=\r\n\ gets\ the\ height\r\n
+comment4.params=g
+comment4.target=void\ drawSnake(java.awt.Graphics)
+comment4.text=\r\n\ the\ draw\ snake\ method\ draws\ the\ snake\ onto\ the\ application\r\n
+comment5.params=
+comment5.target=void\ updateDirections()
+comment5.text=\r\n\ the\ update\ direction\ method\ sets\ the\ possible\ directions\ \r\n
+comment6.params=
+comment6.target=void\ getLonger()
+comment6.text=\r\n\ the\ get\ longer\ method\ increases\ the\ snakes\ body\ size\r\n
+numComments=7

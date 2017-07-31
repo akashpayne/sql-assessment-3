@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=field\ row\ col
+comment0.target=Actor\ optionallyCreateAnimal(Field,\ int,\ int)
+comment0.text=\n\ Optionally\ create\ an\ actor.\n\ Whether\ an\ actor\ is\ created\ will\ depend\ upon\ probabilities\n\ of\ actor\ creation.\n\ @return\ A\ newly\ created\ Actor,\ or\ null\ if\ none\ is\ created.\n
+comment1.params=view
+comment1.target=void\ setupColours(SimulatorView)
+comment1.text=\n\ Associate\ colors\ with\ the\ animal\ classes.\n
+numComments=2

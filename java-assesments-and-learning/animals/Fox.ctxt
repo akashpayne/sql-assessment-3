@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=randomAge\ field\ location
+comment0.target=Fox(boolean,\ Field,\ Location)
+comment0.text=\nCreate\ a\ fox.\ A\ fox\ can\ be\ created\ as\ a\ new\ born\ (age\ zero\nand\ not\ hungry)\ or\ with\ a\ random\ age\ and\ food\ level.\n\n@param\ randomAge\ If\ true,\ the\ fox\ will\ have\ random\ age\ and\ hunger\ level.\n@param\ field\ The\ field\ currently\ occupied.\n@param\ location\ The\ location\ within\ the\ field.\n\n
+comment1.params=newFoxes
+comment1.target=void\ act(List<Animal>)
+comment1.text=\nThis\ is\ what\ the\ fox\ does\ most\ of\ the\ time\:\ it\ hunts\ for\nrabbits.\ In\ the\ process,\ it\ might\ breed,\ die\ of\ hunger,\nor\ die\ of\ old\ age.\n@param\ field\ The\ field\ currently\ occupied.\n@param\ newFoxes\ A\ list\ to\ add\ newly\ born\ foxes\ to.\n\n
+comment2.target=void\ incrementHunger()
+comment2.text=\nMake\ this\ fox\ more\ hungry.\ This\ could\ result\ in\ the\ fox's\ death.\n\n
+comment3.params=location
+comment3.target=Location\ findFood(Location)
+comment3.text=\nTell\ the\ fox\ to\ look\ for\ rabbits\ adjacent\ to\ its\ current\ location.\nOnly\ the\ first\ live\ rabbit\ is\ eaten.\n@param\ location\ Where\ in\ the\ field\ it\ is\ located.\n@return\ Where\ food\ was\ found,\ or\ null\ if\ it\ wasn't.\n\n
+comment4.params=newFoxes
+comment4.target=void\ giveBirth(List<Animal>)
+comment4.text=\nCheck\ whether\ or\ not\ this\ fox\ is\ to\ give\ birth\ at\ this\ step.\nNew\ births\ will\ be\ made\ into\ free\ adjacent\ locations.\n@param\ newFoxes\ A\ list\ to\ add\ newly\ born\ foxes\ to.\n\n
+comment5.target=int\ getMaxAge()
+comment5.text=\nReturn\ the\ maximal\ age\ of\ the\ fox.\n@return\ The\ maximal\ age\ of\ the\ fox.\n\n
+comment6.target=int\ getBreedingAge()
+comment6.text=\nReturn\ the\ breeding\ age\ of\ the\ fox.\n@return\ The\ breeding\ age\ of\ the\ fox.\n\n
+comment7.target=double\ getBreedingProbability()
+comment7.text=\nReturn\ the\ breeding\ probability\ of\ the\ fox.\n@return\ The\ breeding\ probability\ of\ the\ fox.\n\n
+comment8.target=int\ getMaxLitterSize()
+comment8.text=\nReturn\ the\ maximal\ litter\ size\ of\ the\ fox.\n@return\ The\ maximal\ litter\ size\ of\ the\ fox.\n\n
+numComments=9

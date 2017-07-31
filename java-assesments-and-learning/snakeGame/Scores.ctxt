@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ getCurrentScore()
+comment0.text=\r\n\ \ The\ get\ method\ for\ the\ current\ score.\r\n
+comment1.params=
+comment1.target=int\ getHighScore()
+comment1.text=\r\n\ The\ get\ method\ for\ the\ highest\ score.\r\n
+comment2.params=
+comment2.target=Scores()
+comment2.text=\r\n\ \ The\ score\ method\ that\ creates\ a\ text\ file\ that\ stores\ the\ highest\ score.\r\n
+comment3.params=specialFood
+comment3.target=void\ incrementsCurrentScore(boolean)
+comment3.text=\r\n\ This\ method\ increases\ the\ current\ score\ as\ the\ user\ eats\ food.\ \r\n
+comment4.params=s
+comment4.target=void\ updateHighScore(int)
+comment4.text=\r\n\ This\ method\ updates\ the\ highscore\ in\ the\ text\ file.\r\n
+numComments=5

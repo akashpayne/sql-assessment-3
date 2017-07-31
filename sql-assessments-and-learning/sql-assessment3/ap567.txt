@@ -1,0 +1,302 @@
+
+/*
+ * Akash Payne ap567
+ * Database Systems
+ * Assessment 3
+ */ 
+
+ -- Client Table
+CREATE TABLE Client
+	(
+		clientNo CHAR(10) NOT NULL PRIMARY KEY, 
+		forename varchar(30) NOT NULL, 
+		surname varchar(30) NOT NULL, 
+		gender ENUM('M','F'), 
+		address varchar(50) NOT NULL, 
+		telNo CHAR(16) NOT NULL, 
+		proLicenceNo CHAR(25) NOT NULL
+	);
+
+-- Instructor Table	
+CREATE TABLE Instructor 
+	(
+		InstructorID CHAR(10) NOT NULL PRIMARY KEY, 
+		forename varchar(30) NOT NULL, 
+		surname varchar(30) NOT NULL, 
+		gender ENUM('M','F') default 'M', 
+		address varchar(50) NOT NULL, 
+		telNo CHAR(16) NOT NULL, 
+		licenceNo CHAR(25) NOT NULL,
+		carNo CHAR(10) NOT NULL FOREIGN KEY
+	);
+
+-- Car Table	
+CREATE TABLE Car
+	(
+		carNo CHAR(10) NOT NULL PRIMARY KEY, 
+		regNo CHAR(7) NOT NULL, 
+		model varchar(30) NOT NULL, 
+	);
+
+-- Lesson Table	
+CREATE TABLE Lesson
+	(
+		clientNo CHAR(10) NOT NULL PRIMARY KEY, 
+		onDate DATE DEFAULT NULL,
+		onTime TIME DEFAULT NULL,
+		InstructorID CHAR(10) NOT NULL FOREIGN KEY,
+		PRIMARY KEY (InstructorID, onDate, onTime)
+	);
+
+-- Test Table	
+CREATE TABLE Test
+	(
+		clientNo CHAR(10) NOT NULL PRIMARY KEY, 
+		onDate DATE DEFAULT NULL,
+		onTime TIME DEFAULT NULL,
+		InstructorID CHAR(10) NOT NULL FOREIGN KEY,
+		PRIMARY KEY (InstructorID, onDate, onTime),
+		centreID CHAR(10) NOT NULL FOREIGN KEY,
+		status ENUM('Fail','Pass') default 'NULL',
+		reason varchar(30) 
+	);
+
+-- Centre Table	
+CREATE TABLE Centre
+	(
+		centreID CHAR(10) NOT NULL PRIMARY KEY, 
+		name varchar(30), 
+		address varchar(30)  
+	);
+
+-- Client Data 	
+INSERT INTO Client 
+	(
+		clientNo, 
+		forename,
+		surname,
+		gender,
+		address,
+		telNo,
+		proLicenceNo
+	)
+	VALUES
+	(
+		'1',
+		'Jim',
+		'Jones',
+		'M',
+		'1 The Sidings, Canterbury',
+		'04695654978',
+		'JONES7345919TSAD'
+	),
+	(
+		'2',
+		'Julie',
+		'Anderson',
+		'F',
+		'34 High Street, Maidstone',
+		'0116 629136',
+		'ANDER173079QTAD'
+	),
+	(
+		'3',
+		'Jim',
+		'Anderson',
+		'M',
+		'34 High Street, Maidstone',
+		'07557 812015',
+		'ANDER915277RBAD'
+	);
+
+-- Instructor Data 	
+INSERT INTO InstructorID
+	(
+		InstructorID,
+		forename,
+		surname,
+		gender,
+		address,
+		telNo,
+		licenceNo,
+		carNo
+	)
+	VALUES
+	(
+		'I2',
+		'Jim',
+		'Adderson',
+		'M',
+		'6 The Sidings, Canterbury',
+		'08877173458',
+		'ADDDER7123497RDFV',
+		'7'
+	),
+	(
+		'I1',
+		'Jill',
+		'Reid',
+		'F',
+		'Beach Cottage, Sandwich',
+		'06518754368',
+		'REID9157323ERTG',
+		'9'
+	),
+	(
+		'I3',
+		'Sarah',
+		'Jones',	
+		'F',	
+		'123 Stone Street, Pelham',	
+		'004477546643334',	
+		'JONES02313248111344FG',
+		'1'
+	);
+
+-- Car Data 	
+INSERT INTO Car
+	(
+		carNo,
+		regNo,
+		model
+	)
+	VALUES
+	(
+		'1',
+		'TG13 IUR',
+		'Ford Fiesta'
+
+	),
+	(
+		'3',
+		'RF10 AAF',
+		'Ford Fiesta'
+	),
+	(
+		'7',
+		'QW64 YTR',
+		'Ford Fiesta'
+	),
+	(
+		'9',	
+		'MA63 QWA',
+		'Mini One'
+	);
+
+-- Lesson Data 	
+INSERT INTO Lesson
+	(
+		clientNo, 
+		onDate,
+		onTime,
+		InstructorID
+	)
+	VALUES
+	(
+		'1',
+		'01/03/2015',
+		'14:00',
+		'I3'
+	),
+	(
+		'2',
+		'01/03/2015',
+		'14:00',
+		'I1'
+	),
+	(
+		'1',
+		'08/03/2015',
+		'10:00',
+		'I2'
+	),
+	(
+		'3',
+		'08/03/2015',
+		'10:00',
+		'I1'
+	),
+	(
+		'1',
+		'15/03/2015',
+		'14:00',
+		'I3'
+	);
+
+-- Test Data 	
+INSERT INTO Test
+	(
+		clientNo,
+		onDate,
+		onTime,
+		InstructorID,
+		centreID,
+		status,
+		reason
+	)
+	VALUES
+	(
+		'2',
+		'25/03/2015',
+		'10:00',
+		'I1',
+		'1',
+		'Fail',
+		'Emergency Stop'
+	)
+	(
+		'3',	
+		'10/03/2015',
+		'12:00',
+		'I1',
+		'1',
+		'Pass',
+		'NULL'
+	)
+	(
+		'2',
+		'29/04/2015',
+		'10:00',
+		'I2',
+		'1',
+		'NULL',
+		'NULL'
+	);
+
+-- Queries 
+
+-- a) How many people with the first name "Jim" have passed their test? 	
+SELECT COUNT(status) AS NumberOfJimPassed FROM Test
+	INNER JOIN Client ON Test.clientNo = Client.clientNo
+	WHERE (Test.status = 'Pass') AND (Client.forename = 'Jim');
+	
+-- b) get the instructor forename, surname, the client forename, surname and date for every test after 9am on the 10/03/2015
+SELECT 
+	i.forename AS InstructorForename,
+	i.surname AS InstructorSurname,
+	t.
+	c.forename AS ClientForename,
+	c.surname AS ClientSurname,
+	
+	
+-- c) find the name and address for all clients with the date and time of their tests for everyone who has had a lesson with jill reid. 	
+SELECT 
+	c.forename+' '+c.surname AS Name,
+	c.address 
+	FROM Client 
+		JOIN Test
+			ON 
+	WHERE 
+		(i.forename = "Jill") AND (i.surname = "Reid")
+	
+-- d) Get the Forenames, Surnames and Telephone Numbers for all people, both clients and instructors in the database. 
+
+SELECT c.forename, c.surname, c.tele# FROM client 
+UNION
+SELECT i.forename, i.surname, i.tele# FROM instructor
+
+-- e)
+
+-- f)
+-- 7:
+UPDATE instructor SET 
